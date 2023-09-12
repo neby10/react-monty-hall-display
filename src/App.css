@@ -22,6 +22,11 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   /* justify-content: center; */
 }
 
+.App-main {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
 .App-main-title {
   font-size: 2rem;
 }
@@ -35,15 +40,33 @@ body, h1, h2, h3, h4, h5, h6, p, button {
 }
 
 .Game {
-  background-color: aqua;
+  background-color: rgb(218, 222, 222);
 }
 
 .StatPanel {
-  background-color: blueviolet;
+  background-color: rgb(147, 141, 153);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 .Graph {
   background-color: beige;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.Footer {
+  /* background-color: rgb(105, 105, 102); */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* MOBILE FIRST */
@@ -54,7 +77,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   .App {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     grid-gap: 10px;
     align-items: normal;
   }
@@ -66,7 +89,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   .App {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     grid-gap: 10px;
     align-items: normal;
   }

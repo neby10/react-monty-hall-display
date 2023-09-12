@@ -7,7 +7,7 @@ function ImageCard() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "red"
+        // backgroundColor: "red"
     }
 
     return (

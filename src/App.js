@@ -4,11 +4,13 @@ import Graph from './components/Graph';
 import StatPanel from './components/StatPanel';
 import Game from './components/Game';
 import ImageCard from './components/ImageCard';
+import Footer from './components/Footer';
 
 function App() {
 
-  const [correctDoor, setCorrectDoor] = useState(0);
-  const [doorChosen, setDoorChosen] = useState(0);
+  const [correctDoor, setCorrectDoor] = useState((Math.floor(Math.random() * 3) + 1)); // doors 1, 2, 3
+  const [chosenDoor, setChosenDoor] = useState(0); // doors 1, 2, 3
+  const [strategyChosen, setStrategyChosen] = useState("");
   const [stats, setStats] = useState({
     stay: {
       wins: 0,
@@ -18,7 +20,7 @@ function App() {
     switch: {
       wins: 0,
       losses: 0,
-      totalGames: 0
+      totalGames: 0,
     }
   })
 
@@ -35,18 +37,24 @@ function App() {
     alert(gameRulesString);
   }
 
-
   return (
     <div className='App'>
       <div className='App-main'>
         <h1 className='App-main-title'>The Monty Hall Problem</h1>
-        <button onClick={handleClickRules}>Click here to read game constructs!</button>
-        <div>Select a door for a chance at winning a brand new car!</div>
-        <Game />
+        <button onClick={handleClickRules}>Click here to read game rules!</button>
+        <Game 
+          stats={stats}
+          chosenDoor={chosenDoor} 
+          setChosenDoor={setChosenDoor}
+          correctDoor={correctDoor}
+          setCorrectDoor={setCorrectDoor}
+          strategyChosen={strategyChosen}
+          setStrategyChosen={setStrategyChosen} />
       </div>
       <ImageCard />
-      <Graph />
+      <Graph stats={stats} />
       <StatPanel stats={stats} />
+      <Footer />
     </div>
   );
 }

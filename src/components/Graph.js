@@ -1,10 +1,14 @@
 import React from 'react';
 
-function Graph() {
+function Graph({ stats }) {
 
     return (
         <div className='Graph'>
-            <h1>Graph</h1>
+            {
+                Object.entries(stats.stay).map((item, index) => (
+                    <p key={index}>{item[0]}, {item[1]}</p>
+                ))
+            }
         </div>
     )
 }
