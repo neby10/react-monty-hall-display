@@ -43,6 +43,42 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   background-color: rgb(218, 222, 222);
 }
 
+.monty-button {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #dbdbdb;
+  border-radius: .375em;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #363636;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: center;
+  line-height: 1.5;
+  padding: calc(.5em - 1px) 1em;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.monty-button:hover {
+  border-color: #b5b5b5;
+}
+
+.monty-button:focus, .monty-button:active {
+  border-color: #4a4a4a;
+  outline: 0;
+}
+
+
 .StatPanel {
   background-color: rgb(147, 141, 153);
   display: flex;

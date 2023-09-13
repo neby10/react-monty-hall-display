@@ -30,6 +30,7 @@ There are other versions of this problem that could be implemented. For example,
 
 Later Features:
 - user can change the number of doors in the game.
+- **UPDATE FOOTER LINKS**
 
 ### Component Structure
 

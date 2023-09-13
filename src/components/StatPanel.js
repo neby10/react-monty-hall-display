@@ -37,13 +37,13 @@ function StatPanel({ stats }) {
                                 stats.stay.totalGames === 0 && <td>0%</td>
                             }
                             {
-                                stats.stay.totalGames > 0 && <td>{(stats.stay.wins / stats.stay.totalGames) * 100}%</td>
+                                stats.stay.totalGames > 0 && <td>{((stats.stay.wins / stats.stay.totalGames) * 100).toFixed(1)}%</td>
                             }
                             {
                                 stats.switch.totalGames === 0 && <td>0%</td>
                             }
                             {
-                                stats.switch.totalGames > 0 && <td>{(stats.switch.wins / stats.switch.totalGames) * 100}%</td>
+                                stats.switch.totalGames > 0 && <td>{((stats.switch.wins / stats.switch.totalGames) * 100).toFixed(1)}%</td>
                             }
                         </tr>
                     </tbody>
