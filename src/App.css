@@ -1,8 +1,12 @@
 :root {
-  --color-background-main: #FFF;
+  --color-text-white: #FFF;
+  --color-dark: #2e2616;
+  --color-beige: #fff5e8;
+  --color-teal: #4e7f7e;
+  --color-neutral: #ededee;
 
   font-size: 16px;
-
+  color: var(--color-dark);
   margin: 0;
   padding: 0;
 }
@@ -19,12 +23,18 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
 }
 
 .App-main {
-  border: 1px solid black;
   border-radius: 10px;
+  box-shadow: 3px 3px 7px var(--color-dark);
+  background-color: var(--color-neutral);
+  padding: 10px;
+}
+
+.App-main-header {
+  display: flex;
+  flex-direction: column;
 }
 
 .App-main-title {
@@ -40,7 +50,11 @@ body, h1, h2, h3, h4, h5, h6, p, button {
 }
 
 .Game {
-  background-color: rgb(218, 222, 222);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 80%;
 }
 
 .monty-button {
@@ -80,19 +94,20 @@ body, h1, h2, h3, h4, h5, h6, p, button {
 
 
 .StatPanel {
-  background-color: rgb(147, 141, 153);
+  background-color: var(--color-neutral);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid black;
   border-radius: 10px;
+  box-shadow: 3px 5px 10px var(--color-dark);
 }
 
 .Graph {
-  background-color: beige;
-  border: 1px solid black;
+  background-color: var(--color-teal);
+  color: var(--color-text-white);
   border-radius: 10px;
+  box-shadow: 3px 5px 10px var(--color-dark);
 }
 
 .Footer {
@@ -114,8 +129,12 @@ body, h1, h2, h3, h4, h5, h6, p, button {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto auto;
-    grid-gap: 10px;
+    grid-gap: 15px;
     align-items: normal;
+  }
+  .App-main-header {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -126,7 +145,11 @@ body, h1, h2, h3, h4, h5, h6, p, button {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto auto;
-    grid-gap: 10px;
+    grid-gap: 15px;
     align-items: normal;
+  }
+  .App-main-header {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

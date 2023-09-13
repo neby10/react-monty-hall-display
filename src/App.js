@@ -14,7 +14,7 @@ function App() {
 
     Is it in your interest to switch your choice?
 
-    To play, select a door then decide to stay or switch. The correct door will be shown and the stats will update. Then you can continue to play to get a larger sample size. Statistics will be updated upon reset.`
+    To play, select a door then decide to stay or switch. The correct door will be shown and the stats will update. Then you can continue to play to get a larger sample size. Game Results will be updated upon reset.`
   
   const [stats, setStats] = useState({
     stay: {
@@ -36,8 +36,14 @@ function App() {
   return (
     <div className='App'>
       <div className='App-main'>
-        <h1 className='App-main-title'>The Monty Hall Problem</h1>
-        <button onClick={handleClickRules}>Click here to read game rules!</button>
+        <div className='App-main-header'>
+          <h1 className='App-main-title'>The Monty Hall Problem</h1>
+          <button 
+            className='monty-button'
+            onClick={handleClickRules} >
+              Click here to read game rules!
+            </button>
+        </div>
         <Game 
           stats={stats}
           setStats={setStats} />

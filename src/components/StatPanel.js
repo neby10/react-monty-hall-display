@@ -6,7 +6,7 @@ function StatPanel({ stats }) {
     return (
         <div className='StatPanel'>
             <div>
-                <h1>StatPanel</h1>
+                <h1>Game Results</h1>
                 <table>
                     <thead>
                         <tr>

@@ -12,12 +12,12 @@ function Game({ stats, setStats }) {
     const doorContainerStyle = {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "space-evenly",
     }
 
     const regularDoorStyle = {
-        width: "200px",
-        height: "200px",
+        width: "25%",
+        height: "175px",
         borderRadius: "10px",
         border: "1px solid black",
         display: "flex",
@@ -27,8 +27,8 @@ function Game({ stats, setStats }) {
     }
 
     const chosenDoorStyle = {
-        width: "200px",
-        height: "200px",
+        width: "25%",
+        height: "175px",
         borderRadius: "10px",
         border: "1px solid black",
         backgroundColor: "gray",
@@ -38,13 +38,13 @@ function Game({ stats, setStats }) {
         alignItems: "center",
     }
 
-    const correctDoorStyle = {
-        backgroundColor: "green"
-    }
+    // const correctDoorStyle = {
+    //     backgroundColor: "green"
+    // }
 
-    const incorrectDoorStyle = {
-        backgroundColor: "red"
-    }
+    // const incorrectDoorStyle = {
+    //     backgroundColor: "red"
+    // }
 
     const doorText = {
         fontSize: "2rem"
@@ -154,7 +154,7 @@ function Game({ stats, setStats }) {
     }
 
     return (
-        <div className='Game' style={{display: "flex", flexDirection: "column", justifyContent: "center", justifyContent: "space-evenly", textAlign: "center", height: "100%"}}>
+        <div className='Game'>
             <p>{gameText}</p>
             {
                 gameStage === 1 && 
@@ -187,14 +187,12 @@ function Game({ stats, setStats }) {
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
                         <button 
                             className='monty-button' 
-                            onClick={() => handleSelectStrategy("stay")}
-                            role='button' >
+                            onClick={() => handleSelectStrategy("stay")} >
                                 Stay with Door {chosenDoor}
                         </button>
                         <button 
                             className='monty-button' 
-                            onClick={() => handleSelectStrategy("switch")}
-                            role='button' >
+                            onClick={() => handleSelectStrategy("switch")} >
                                 Switch to Door {switchDoor}
                         </button>
                     </div>
@@ -226,8 +224,7 @@ function Game({ stats, setStats }) {
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
                         <button 
                             className='monty-button' 
-                            onClick={() => handleReset()}
-                            role='button' >
+                            onClick={() => handleReset()} >
                                 Reset
                         </button>
                     </div>
