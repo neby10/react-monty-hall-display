@@ -20,8 +20,6 @@ The scope of functionality for our Monty Hall visualization includes:
 ## Visit
 [Visit]() TODO
 
-## Project Notes
-
 ## Known Bugs
 
 ## Potential Improvements
@@ -32,7 +30,7 @@ Later Features:
 - user can change the number of doors in the game.
 - **UPDATE FOOTER LINKS**
 
-### Component Structure
+## Component Structure
 
 - App
     - Game
@@ -40,3 +38,21 @@ Later Features:
     - Graph
     - StatPanel
     - Footer
+
+## External Links
+[React-Chart.js](https://react-chartjs-2.js.org/components/)
+[Chart.js](https://github.com/chartjs)
+
+## Project Notes
+NOW
+- Display red door when revealing goatDoor or display image of a goat...
+- Display stay / switch over their respective boxes
+- Display correctDoor with car image?
+- Main Panel Design
+- Better Popup for Game Rules Button
+- Responsive design throughout... Everything should be mobile except media queries at bottom.
+- Change socials words to socials icons
+
+
+LATER
+- Graph component - remove second set of react-chartjs x data labels... Had a tough time trying to figure this out.

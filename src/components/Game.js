@@ -60,7 +60,7 @@ function Game({ stats, setStats }) {
             break;
         case 3:
             const result = chosenDoor === correctDoor ? "You Win!" : "You Lose!";
-            gameText = `You chose to ${strategyChosen}. The correct door was Door ${chosenDoor}. ${result}`;
+            gameText = `You chose to ${strategyChosen}. The correct door was Door ${correctDoor}. ${result}`;
             break;
         default:
             gameText = "ERROR: This should not be displayed.";
@@ -129,7 +129,7 @@ function Game({ stats, setStats }) {
         }
         setTimeout(() => {
             setGameStage(2);
-        }, 500)
+        }, 250)
     }
 
     const handleSelectStrategy = (strat) => {
@@ -141,7 +141,7 @@ function Game({ stats, setStats }) {
         }
         setTimeout(() => {
             setGameStage(3);
-        }, 500);
+        }, 250);
     }
 
     const handleReset = () => {

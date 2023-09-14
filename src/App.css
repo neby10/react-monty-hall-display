@@ -1,9 +1,9 @@
 :root {
   --color-text-white: #FFF;
-  --color-dark: #2e2616;
-  --color-beige: #fff5e8;
-  --color-teal: #4e7f7e;
-  --color-neutral: #ededee;
+  --color-dark: #363544;
+  --color-light: #fdfdfd;
+  --color-accent-orange: #9f6815;
+  --color-accent-green: #80b109;
 
   font-size: 16px;
   color: var(--color-dark);
@@ -28,7 +28,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
 .App-main {
   border-radius: 10px;
   box-shadow: 3px 3px 7px var(--color-dark);
-  background-color: var(--color-neutral);
+  background-color: var(--color-light);
   padding: 10px;
 }
 
@@ -94,7 +94,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
 
 
 .StatPanel {
-  background-color: var(--color-neutral);
+  background-color: var(--color-light);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,7 +104,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
 }
 
 .Graph {
-  background-color: var(--color-teal);
+  background-color: var(--color-dark);
   color: var(--color-text-white);
   border-radius: 10px;
   box-shadow: 3px 5px 10px var(--color-dark);
@@ -118,6 +118,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-top: 20px;
 }
 
 /* MOBILE FIRST */
@@ -129,7 +130,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto auto;
-    grid-gap: 15px;
+    grid-gap: 20px;
     align-items: normal;
   }
   .App-main-header {
@@ -145,7 +146,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto auto;
-    grid-gap: 15px;
+    grid-gap: 20px;
     align-items: normal;
   }
   .App-main-header {
