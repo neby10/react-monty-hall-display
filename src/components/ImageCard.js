@@ -7,7 +7,6 @@ function ImageCard() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        // backgroundColor: "red"
     }
 
     return (
@@ -15,7 +14,7 @@ function ImageCard() {
             <img 
                 className='ImageCard-image' 
                 src='images/goat-car-door-image.jpeg' 
-                alt='goat car image' />
+                alt='goat car door' />
         </div>
     )
 }

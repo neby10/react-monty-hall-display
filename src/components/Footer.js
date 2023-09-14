@@ -14,6 +14,7 @@ function Footer() {
                 <p style={{margin: "5px"}}>
                     <a 
                         target='_blank'
+                        rel="noopener noreferrer"
                         href='https://docs.google.com/forms/d/e/1FAIpQLSf27xmYiFDqhmi_MIyhTSTbpfc13fbodwScdXGRKLVY1QVk_Q/viewform?usp=sharing'>
                             Contact
                     </a>

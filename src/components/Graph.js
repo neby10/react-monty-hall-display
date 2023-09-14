@@ -115,7 +115,7 @@ function Graph({ stats }) {
             ]
         }));
 
-    }, [stayGraphDataArray, switchGraphDataArray]);
+    }, [stayGraphDataArray, switchGraphDataArray, stats.stay.totalGames, stats.switch.totalGames]);
 
     return (
         <div className='Graph'>
