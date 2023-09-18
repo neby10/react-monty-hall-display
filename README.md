@@ -17,8 +17,15 @@ The scope of functionality for our Monty Hall visualization includes:
 ## Tech Stack
 - React SPA
 
+## Dependencies
+- chartjs
+- react-chartjs
+~~~
+npm i react-chartjs-2 chart.js
+~~~
+
 ## Visit
-[Visit]() TODO
+[Visit Site](https://react-monty-hall-display.netlify.app/)
 
 ## Known Bugs
 
@@ -42,17 +49,8 @@ Later Features:
 ## External Links
 [React-Chart.js](https://react-chartjs-2.js.org/components/)
 [Chart.js](https://github.com/chartjs)
+[Convert Files: JPEG to ICO](https://www.zamzar.com/convert/jpg-to-ico/)
 
 ## Project Notes
-NOW
-- Display red door when revealing goatDoor or display image of a goat...
-- Display stay / switch over their respective boxes
-- Display correctDoor with car image?
-- Main Panel Design
-- Better Popup for Game Rules Button
-- Responsive design throughout... Everything should be mobile except media queries at bottom.
-- Change socials words to socials icons
-
-
 LATER
 - Graph component - remove second set of react-chartjs x data labels... Had a tough time trying to figure this out.

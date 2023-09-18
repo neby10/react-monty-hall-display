@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function Game({ stats, setStats }) {
-
     const [gameStage, setGameStage] = useState(1); // 1 = start, 2 = middle, 3 = end
     const [strategyChosen, setStrategyChosen] = useState(""); // "stay", "switch"
     const [correctDoor, setCorrectDoor] = useState((Math.floor(Math.random() * 3) + 1)); // doors 1, 2, 3
@@ -9,15 +8,7 @@ function Game({ stats, setStats }) {
     const [goatDoor, setGoatDoor] = useState(0);
     const [switchDoor, setSwitchDoor] = useState(0);
 
-    const doorContainerStyle = {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
-    }
-
     const regularDoorStyle = {
-        width: "25%",
-        height: "175px",
         borderRadius: "10px",
         border: "1px solid black",
         display: "flex",
@@ -27,8 +18,6 @@ function Game({ stats, setStats }) {
     }
 
     const chosenDoorStyle = {
-        width: "25%",
-        height: "175px",
         borderRadius: "10px",
         border: "1px solid black",
         backgroundColor: "gray",
@@ -38,16 +27,24 @@ function Game({ stats, setStats }) {
         alignItems: "center",
     }
 
-    // const correctDoorStyle = {
-    //     backgroundColor: "green"
-    // }
+    const correctDoorStyle = {
+        backgroundColor: "green",
+        borderRadius: "10px",
+        border: "1px solid black",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+    }
 
-    // const incorrectDoorStyle = {
-    //     backgroundColor: "red"
-    // }
-
-    const doorText = {
-        fontSize: "2rem"
+    const incorrectDoorStyle = {
+        backgroundColor: "red",
+        borderRadius: "10px",
+        border: "1px solid black",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
     }
 
     let gameText = "";
@@ -129,7 +126,7 @@ function Game({ stats, setStats }) {
         }
         setTimeout(() => {
             setGameStage(2);
-        }, 250)
+        }, 500)
     }
 
     const handleSelectStrategy = (strat) => {
@@ -141,7 +138,7 @@ function Game({ stats, setStats }) {
         }
         setTimeout(() => {
             setGameStage(3);
-        }, 250);
+        }, 500);
     }
 
     const handleReset = () => {
@@ -153,30 +150,49 @@ function Game({ stats, setStats }) {
         
     }
 
+    const stayButton = (
+        <button 
+            className='monty-button' 
+            style={{width: "30%"}}
+            onClick={() => handleSelectStrategy("stay")} >
+                Stay with Door {chosenDoor}
+        </button>
+    )
+
+    const switchButton = (
+        <button 
+            className='monty-button' 
+            style={{width: "30%"}}
+            onClick={() => handleSelectStrategy("switch")} >
+                Switch to Door {switchDoor}
+        </button>
+    )
+
+    const extraDiv = (
+        <div style={{color: "white", width: "25%"}}>.</div>
+    )
+
     return (
         <div className='Game'>
-            <p>{gameText}</p>
+            <p style={{margin: "10px 0"}}>{gameText}</p>
             {
                 gameStage === 1 && 
                 <div>
-                    <div style={doorContainerStyle}>
-                        <div style={chosenDoor === 1 ? chosenDoorStyle : regularDoorStyle} onClick={() => handleSelectDoor(1)}>
-                            <p style={doorText}>Door 1</p>
-                            {/* <p>Chosen: {chosenDoor}</p>
-                            <p>Correct: {correctDoor}</p>
-                            <p>Goat: {goatDoor}</p> */}
+                    <div className='Game-door-container'>
+                        <div 
+                            className='Game-door-size' 
+                            style={chosenDoor === 1 ? chosenDoorStyle : regularDoorStyle} onClick={() => handleSelectDoor(1)}>
+                            <p className="Game-door-text">Door 1</p>
                         </div>
-                        <div style={chosenDoor === 2 ? chosenDoorStyle : regularDoorStyle} onClick={() => handleSelectDoor(2)}>
-                            <p style={doorText}>Door 2</p>
-                            {/* <p>Chosen: {chosenDoor}</p>
-                            <p>Correct: {correctDoor}</p>
-                            <p>Goat: {goatDoor}</p> */}
+                        <div 
+                            className='Game-door-size' 
+                            style={chosenDoor === 2 ? chosenDoorStyle : regularDoorStyle} onClick={() => handleSelectDoor(2)}>
+                            <p className="Game-door-text">Door 2</p>
                         </div>
-                        <div style={chosenDoor === 3 ? chosenDoorStyle : regularDoorStyle} onClick={() => handleSelectDoor(3)}>
-                            <p style={doorText}>Door 3</p>
-                            {/* <p>Chosen: {chosenDoor}</p>
-                            <p>Correct: {correctDoor}</p>
-                            <p>Goat: {goatDoor}</p> */}
+                        <div 
+                            className='Game-door-size' 
+                            style={chosenDoor === 3 ? chosenDoorStyle : regularDoorStyle} onClick={() => handleSelectDoor(3)}>
+                            <p className="Game-door-text">Door 3</p>
                         </div>
                     </div>
                 </div>
@@ -185,35 +201,28 @@ function Game({ stats, setStats }) {
                 gameStage === 2 &&
                 <div>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
-                        <button 
-                            className='monty-button' 
-                            onClick={() => handleSelectStrategy("stay")} >
-                                Stay with Door {chosenDoor}
-                        </button>
-                        <button 
-                            className='monty-button' 
-                            onClick={() => handleSelectStrategy("switch")} >
-                                Switch to Door {switchDoor}
-                        </button>
+                        { chosenDoor === 1 && switchDoor === 2 && <>{stayButton}{switchButton}{extraDiv}</> }
+                        { chosenDoor === 1 && switchDoor === 3 && <>{stayButton}{extraDiv}{switchButton}</> }
+                        { chosenDoor === 2 && switchDoor === 1 && <>{switchButton}{stayButton}{extraDiv}</> }
+                        { chosenDoor === 2 && switchDoor === 3 && <>{extraDiv}{stayButton}{switchButton}</> }
+                        { chosenDoor === 3 && switchDoor === 1 && <>{switchButton}{extraDiv}{stayButton}</> }
+                        { chosenDoor === 3 && switchDoor === 2 && <>{extraDiv}{switchButton}{stayButton}</> }
                     </div>
-                    <div style={doorContainerStyle}>
-                        <div style={chosenDoor === 1 ? chosenDoorStyle : regularDoorStyle}>
-                            <p style={doorText}>Door 1</p>
-                            {/* <p>Chosen: {chosenDoor}</p>
-                            <p>Correct: {correctDoor}</p>
-                            <p>Goat: {goatDoor}</p> */}
+                    <div className='Game-door-container'>
+                        <div 
+                            className='Game-door-size' 
+                            style={goatDoor === 1 ? incorrectDoorStyle : (chosenDoor === 1 ? chosenDoorStyle : regularDoorStyle)}>
+                            <p className="Game-door-text">Door 1</p>
                         </div>
-                        <div style={chosenDoor === 2 ? chosenDoorStyle : regularDoorStyle}>
-                            <p style={doorText}>Door 2</p>
-                            {/* <p>Chosen: {chosenDoor}</p>
-                            <p>Correct: {correctDoor}</p>
-                            <p>Goat: {goatDoor}</p> */}
+                        <div 
+                            className='Game-door-size' 
+                            style={goatDoor === 2 ? incorrectDoorStyle : (chosenDoor === 2 ? chosenDoorStyle : regularDoorStyle)}>
+                            <p className="Game-door-text">Door 2</p>
                         </div>
-                        <div style={chosenDoor === 3 ? chosenDoorStyle : regularDoorStyle}>
-                            <p style={doorText}>Door 3</p>
-                            {/* <p>Chosen: {chosenDoor}</p>
-                            <p>Correct: {correctDoor}</p>
-                            <p>Goat: {goatDoor}</p> */}
+                        <div 
+                            className='Game-door-size' 
+                            style={goatDoor === 3 ? incorrectDoorStyle : (chosenDoor === 3 ? chosenDoorStyle : regularDoorStyle)}>
+                            <p className="Game-door-text">Door 3</p>
                         </div>
                     </div>
                 </div>
@@ -228,24 +237,21 @@ function Game({ stats, setStats }) {
                                 Reset
                         </button>
                     </div>
-                    <div style={doorContainerStyle}>
-                        <div style={chosenDoor === 1 ? chosenDoorStyle : regularDoorStyle}>
-                            <p style={doorText}>Door 1</p>
-                            {/* <p>Chosen: {chosenDoor}</p>
-                            <p>Correct: {correctDoor}</p>
-                            <p>Goat: {goatDoor}</p> */}
+                    <div className='Game-door-container'>
+                        <div 
+                            className='Game-door-size' 
+                            style={goatDoor === 1 ? incorrectDoorStyle : ( correctDoor === 1 ? correctDoorStyle : (chosenDoor === 1 ? chosenDoorStyle : regularDoorStyle))}>
+                            <p className="Game-door-text">Door 1</p>
                         </div>
-                        <div style={chosenDoor === 2 ? chosenDoorStyle : regularDoorStyle}>
-                            <p style={doorText}>Door 2</p>
-                            {/* <p>Chosen: {chosenDoor}</p>
-                            <p>Correct: {correctDoor}</p>
-                            <p>Goat: {goatDoor}</p> */}
+                        <div 
+                            className='Game-door-size' 
+                            style={goatDoor === 2 ? incorrectDoorStyle : ( correctDoor === 2 ? correctDoorStyle : (chosenDoor === 2 ? chosenDoorStyle : regularDoorStyle))}>
+                            <p className="Game-door-text">Door 2</p>
                         </div>
-                        <div style={chosenDoor === 3 ? chosenDoorStyle : regularDoorStyle}>
-                            <p style={doorText}>Door 3</p>
-                            {/* <p>Chosen: {chosenDoor}</p>
-                            <p>Correct: {correctDoor}</p>
-                            <p>Goat: {goatDoor}</p> */}
+                        <div 
+                            className='Game-door-size' 
+                            style={goatDoor === 3 ? incorrectDoorStyle : ( correctDoor === 3 ? correctDoorStyle : (chosenDoor === 3 ? chosenDoorStyle : regularDoorStyle))}>
+                            <p className="Game-door-text">Door 3</p>
                         </div>
                     </div>
                 </div>

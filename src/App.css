@@ -41,6 +41,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   font-size: 2rem;
 }
 
+/* IMAGECARD */
 .ImageCard-image {
   /* width: 350px; */
   width: 90%;
@@ -49,12 +50,28 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   border-radius: 10px;
 }
 
+/* GAME */
 .Game {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
   height: 80%;
+}
+
+.Game-door-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.Game-door-size {
+  width: 25%;
+  height: 175px;
+}
+
+.Game-door-text {
+  font-size: 2rem;
 }
 
 .monty-button {
@@ -92,7 +109,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   outline: 0;
 }
 
-
+/* STATPANEL */
 .StatPanel {
   background-color: var(--color-light);
   display: flex;
@@ -103,6 +120,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   box-shadow: 3px 5px 10px var(--color-dark);
 }
 
+/* GRAPH */
 .Graph {
   background-color: var(--color-dark);
   color: var(--color-text-white);
@@ -110,6 +128,7 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   box-shadow: 3px 5px 10px var(--color-dark);
 }
 
+/* FOOTER */
 .Footer {
   /* background-color: rgb(105, 105, 102); */
   grid-column-start: 1;
@@ -121,7 +140,32 @@ body, h1, h2, h3, h4, h5, h6, p, button {
   margin-top: 20px;
 }
 
+
 /* MOBILE FIRST */
+@media screen and (max-width: 509px) {
+  .ImageCard {
+    margin: 30px;
+  }
+
+  .Graph {
+    margin: 30px;
+    width: 100%;
+  }
+
+  .StatPanel {
+    margin: 30px;
+  }
+  .Game-door-size {
+    width: 30%;
+    height: 100px;
+  }
+  .Game-door-text {
+    font-size: 1.4rem;
+  }
+  .monty-button {
+    font-size: 0.6rem;
+  }
+}
 
 
 /* MEDIUM */

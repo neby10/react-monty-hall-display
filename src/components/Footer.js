@@ -2,16 +2,24 @@ import React from 'react';
 
 function Footer() {
 
+    const itemStyle = {
+        margin: "5px"
+    }
+
     return (
         <div className='Footer'>
             <div>
-                <p style={{margin: "5px"}}>Developed in Detroit</p>
-                <p style={{margin: "5px"}}>2023 Indomitable Spirit Technologies, LLC.&trade;</p>
-                <p style={{margin: "5px"}}><a href='/'>Visit Indomitable Spirit Website</a></p>
-                <div style={{margin: "5px"}}>
-                    <a href='/'>Facebook</a> | <a href='/'>Twitter</a> | <a href='/'>Instagram</a> | <a href='/'>LinkedIn</a>
-                </div>
-                <p style={{margin: "5px"}}>
+                <p style={itemStyle}>Developed in Detroit</p>
+                {/* <p style={itemStyle}>Indomitable Spirit Technologies, LLC.™</p> */}
+                <p style={itemStyle}>
+                    <a 
+                        target='_blank'
+                        rel="noopener noreferrer"
+                        href='https://indomitable-spirit-technologies.netlify.app/'>
+                        Indomitable Spirit Technologies, LLC.™
+                    </a>
+                </p>
+                <p style={itemStyle}>
                     <a 
                         target='_blank'
                         rel="noopener noreferrer"
@@ -19,6 +27,36 @@ function Footer() {
                             Contact
                     </a>
                 </p>
+                <div style={{padding: "10px"}}>
+                    <a 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href='https://www.facebook.com/profile.php?id=61551474747469' 
+                        style={{margin: "10px"}}>
+                        <img src="images/icons/facebook_icon.png" alt="facebook logo" width="25" height="25" />
+                    </a>
+                    <a 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        href='https://www.instagram.com/indomitablespirittechnologies/' 
+                        style={{margin: "10px"}}>
+                        <img src="images/icons/instagram_icon.png" alt="instagram logo" width="25" height="25" />
+                    </a>
+                    {/* <a 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        href='/' 
+                        class="footer-link">
+                        <img src="images/icons/twitter_icon.png" alt="twitter logo" width="25" height="25" />
+                    </a>
+                    <a 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        href='/' 
+                        class="footer-link">
+                        <img src="images/icons/linkedin_icon.png" alt="linkedin logo" width="25" height="25" />
+                    </a> */}
+                </div>
             </div>
         </div>
     )
